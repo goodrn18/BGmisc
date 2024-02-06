@@ -119,7 +119,7 @@ extended family environment (`ped2ce`).
 ### Computing mitochondrial relatedness
 
 
-Here we calculate the mitochondrial relatedness between all pairs of
+Here we calculate the mitochondrial relatedness between a subset of
 individuals in the `potter` dataset.
 
 
@@ -130,8 +130,8 @@ table(mit)
 ```
 
 As you can see, some of the family members share mitochrondial DNA, such
-as person 1 and person 3 `r mit[1,3]`, whereas person 1 and person 2 do
-not.
+as person 1 and person 2, as designated by `r mit[1,2]` in the table, whereas person 1 and person 3 do
+not (`r mit[1,3]`).
 
 ### Computing relatedness through common nuclear environment
 
