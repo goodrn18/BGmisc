@@ -35,7 +35,7 @@ This vignette showcases two key features that capitalize on the network structur
 
 ```{r setup}
 library(BGmisc)
-data(potter)
+#data(potter)
 ```
 
 
@@ -58,11 +58,11 @@ plotPedigree(potter, code_male = 1, verbose = TRUE)
 We will use the `potter` pedigree data as an example. For convenience, we've renamed the family ID variable to `oldfam` to avoid confusion with the new family ID variable we will create.
 
 ```{r}
-names(potter)[names(potter)=="famID"]<- "oldfam"
+names(potter)[names(potter)=="fam"]<- "oldfam"
 
-ds <- ped2fam(potter, famID = "oldfam", personID = "personID")
+ds <- ped2fam(potter, famID = "famID", personID = "ID") #this line provides the name for the new family ID variable created by the ped2fam function
 
-table(ds$famID, ds$fam)
+table(ds$famID, ds$oldfam)  
 ```
 
 Because the `potter` data already had a family ID variable, we compare 
@@ -107,6 +107,7 @@ add_list <- lapply(
     ped2add(tmp)
   }
 )
+#what is happening here? When I run this code, add_list is a list of 0...
 ```
 
 ## Other relatedness measures
